@@ -64,7 +64,7 @@ export default function Home() {
                 variant="ghost"
                 size="icon"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="glass-card hover:bg-white/20"
+                className="glass-card hover:bg-white/20 rounded-full"
               >
                 {theme === "dark" ? (
                   <Sun className="w-5 h-5 text-foreground" />
@@ -72,7 +72,7 @@ export default function Home() {
                   <Moon className="w-5 h-5 text-foreground" />
                 )}
               </Button>
-              <Button className="glass bg-primary/80 hover:bg-primary text-primary-foreground">
+              <Button className="glass bg-primary/80 hover:bg-primary text-primary-foreground rounded-full">
                 开始使用
               </Button>
             </div>
@@ -102,11 +102,11 @@ export default function Home() {
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="glass bg-primary/80 hover:bg-primary text-primary-foreground text-lg px-8">
+              <Button size="lg" className="glass bg-primary/80 hover:bg-primary text-primary-foreground text-lg px-8 rounded-full">
                 免费开始
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="glass text-foreground border-foreground/30 hover:bg-white/20 text-lg px-8">
+              <Button size="lg" variant="outline" className="glass text-foreground border-foreground/30 hover:bg-white/20 text-lg px-8 rounded-full">
                 了解更多
               </Button>
             </div>
@@ -177,7 +177,7 @@ export default function Home() {
             <p className="text-foreground/70 mb-8 max-w-xl mx-auto">
               立即体验蓝绿色毛玻璃效果带来的视觉革命，打造令人难忘的网页设计
             </p>
-            <Button size="lg" className="glass bg-primary/80 hover:bg-primary text-primary-foreground text-lg px-10">
+            <Button size="lg" className="glass bg-primary/80 hover:bg-primary text-primary-foreground text-lg px-10 rounded-full">
               立即创建
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
