@@ -1,7 +1,7 @@
 
 import { useState } from "react";
-import { Moon, Sun, Sparkles, Zap, Shield, ArrowRight, Waves, Leaf, Droplets } from "lucide-react";
-import { useTheme } from "next-themes";
+import { useNavigate } from "react-router-dom";
+import { Sparkles, ArrowRight, Waves, Leaf, Droplets, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -34,11 +34,11 @@ const stats = [
 ];
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
+  const navigate = useNavigate();
   const [activeCard, setActiveCard] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden pt-24">
       {/* 动态渐变背景 - 蓝绿色系 */}
       <div className="fixed inset-0 bg-gradient-to-br from-cyan-500 via-teal-500 to-emerald-500 animate-gradient" />
       
@@ -49,36 +49,6 @@ export default function Home() {
 
       {/* 内容区域 */}
       <div className="relative z-10">
-        {/* 导航栏 */}
-        <nav className="glass sticky top-0 z-50 mx-4 mt-4 rounded-2xl">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl glass-card flex items-center justify-center">
-                <Waves className="w-5 h-5 text-primary" />
-              </div>
-              <span className="text-xl font-bold text-foreground">AquaGlass</span>
-            </div>
-            
-            <div className="flex items-center gap-4">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="glass-card hover:bg-white/20"
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5 text-foreground" />
-                ) : (
-                  <Moon className="w-5 h-5 text-foreground" />
-                )}
-              </Button>
-              <Button className="glass bg-primary/80 hover:bg-primary text-primary-foreground">
-                开始使用
-              </Button>
-            </div>
-          </div>
-        </nav>
-
         {/* 主内容区 */}
         <main className="max-w-7xl mx-auto px-6 py-16">
           {/* Hero 区域 */}
@@ -102,12 +72,22 @@ export default function Home() {
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="glass bg-primary/80 hover:bg-primary text-primary-foreground text-lg px-8">
+              <Button 
+                size="lg" 
+                className="glass bg-primary/80 hover:bg-primary text-primary-foreground text-lg px-8 rounded-full"
+                onClick={() => navigate("/designer")}
+              >
                 免费开始
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="glass text-foreground border-foreground/30 hover:bg-white/20 text-lg px-8">
-                了解更多
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="glass text-foreground border-foreground/30 hover:bg-white/20 text-lg px-8 rounded-full"
+                onClick={() => navigate("/market")}
+              >
+                <ShoppingCart className="mr-2 w-5 h-5" />
+                浏览样式
               </Button>
             </div>
           </section>
@@ -177,10 +157,25 @@ export default function Home() {
             <p className="text-foreground/70 mb-8 max-w-xl mx-auto">
               立即体验蓝绿色毛玻璃效果带来的视觉革命，打造令人难忘的网页设计
             </p>
-            <Button size="lg" className="glass bg-primary/80 hover:bg-primary text-primary-foreground text-lg px-10">
-              立即创建
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button 
+                size="lg" 
+                className="glass bg-primary/80 hover:bg-primary text-primary-foreground text-lg px-10 rounded-full"
+                onClick={() => navigate("/designer")}
+              >
+                立即创建
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="glass text-foreground border-foreground/30 hover:bg-white/20 text-lg px-10 rounded-full"
+                onClick={() => navigate("/market")}
+              >
+                <ShoppingCart className="mr-2 w-5 h-5" />
+                探索市场
+              </Button>
+            </div>
           </section>
         </main>
 
