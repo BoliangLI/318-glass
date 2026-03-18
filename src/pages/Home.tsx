@@ -1,28 +1,28 @@
 
 import { useState } from "react";
-import { Moon, Sun, Sparkles, Zap, Shield, ArrowRight } from "lucide-react";
+import { Moon, Sun, Sparkles, Zap, Shield, ArrowRight, Waves, Leaf, Droplets } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const features = [
   {
-    icon: Sparkles,
-    title: "极致美观",
-    description: "毛玻璃效果带来现代感十足的视觉体验，让界面更加精致优雅。",
-    color: "from-purple-400 to-pink-400",
+    icon: Waves,
+    title: "清新视觉",
+    description: "蓝绿色调带来自然清新的视觉体验，如同海洋般宁静舒适。",
+    color: "from-cyan-400 to-teal-400",
   },
   {
-    icon: Zap,
+    icon: Leaf,
+    title: "自然灵感",
+    description: "源自大自然的配色方案，营造放松、平静的浏览氛围。",
+    color: "from-emerald-400 to-green-400",
+  },
+  {
+    icon: Droplets,
     title: "流畅动效",
-    description: "平滑的过渡动画和漂浮效果，为用户带来愉悦的交互体验。",
-    color: "from-cyan-400 to-blue-400",
-  },
-  {
-    icon: Shield,
-    title: "响应式设计",
-    description: "完美适配各种屏幕尺寸，无论手机还是桌面都能展现最佳效果。",
-    color: "from-emerald-400 to-teal-400",
+    description: "如水波般平滑的过渡动画，为用户带来愉悦的交互体验。",
+    color: "from-sky-400 to-blue-400",
   },
 ];
 
@@ -39,13 +39,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* 动态渐变背景 */}
-      <div className="fixed inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 animate-gradient" />
+      {/* 动态渐变背景 - 蓝绿色系 */}
+      <div className="fixed inset-0 bg-gradient-to-br from-cyan-500 via-teal-500 to-emerald-500 animate-gradient" />
       
-      {/* 装饰性光晕 */}
-      <div className="glow w-96 h-96 bg-purple-400 top-20 left-20 animate-float" />
-      <div className="glow w-80 h-80 bg-pink-400 bottom-40 right-20 animate-float-delayed" />
-      <div className="glow w-64 h-64 bg-cyan-400 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      {/* 装饰性光晕 - 蓝绿色系 */}
+      <div className="glow w-96 h-96 bg-cyan-400 top-20 left-20 animate-float" />
+      <div className="glow w-80 h-80 bg-teal-400 bottom-40 right-20 animate-float-delayed" />
+      <div className="glow w-64 h-64 bg-emerald-400 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-float-slow" />
 
       {/* 内容区域 */}
       <div className="relative z-10">
@@ -54,9 +54,9 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl glass-card flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-primary" />
+                <Waves className="w-5 h-5 text-primary" />
               </div>
-              <span className="text-xl font-bold text-foreground">GlassUI</span>
+              <span className="text-xl font-bold text-foreground">AquaGlass</span>
             </div>
             
             <div className="flex items-center gap-4">
@@ -85,20 +85,20 @@ export default function Home() {
           <section className="text-center mb-24">
             <div className="glass inline-block px-4 py-2 rounded-full mb-6">
               <span className="text-sm font-medium text-foreground">
-                ✨ 全新的毛玻璃设计体验
+                🌊 蓝绿色毛玻璃设计体验
               </span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-              毛玻璃效果
+              清新蓝绿
               <br />
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                网页设计
+              <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
+                毛玻璃网页
               </span>
             </h1>
             
             <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-10">
-              体验现代 Web 设计的极致美学，半透明模糊效果带来前所未有的视觉层次感
+              体验如海洋般宁静的视觉美学，半透明模糊效果带来自然舒适的层次感
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
@@ -175,7 +175,7 @@ export default function Home() {
               准备好开始了吗？
             </h2>
             <p className="text-foreground/70 mb-8 max-w-xl mx-auto">
-              立即体验毛玻璃效果带来的视觉革命，打造令人难忘的网页设计
+              立即体验蓝绿色毛玻璃效果带来的视觉革命，打造令人难忘的网页设计
             </p>
             <Button size="lg" className="glass bg-primary/80 hover:bg-primary text-primary-foreground text-lg px-10">
               立即创建
@@ -187,7 +187,7 @@ export default function Home() {
         {/* 页脚 */}
         <footer className="glass mt-24 mx-4 mb-4 rounded-2xl">
           <div className="max-w-7xl mx-auto px-6 py-8 text-center text-foreground/60">
-            <p>© 2024 GlassUI. 用毛玻璃效果重新定义网页设计</p>
+            <p>© 2024 AquaGlass. 用蓝绿色毛玻璃效果重新定义网页设计</p>
           </div>
         </footer>
       </div>
