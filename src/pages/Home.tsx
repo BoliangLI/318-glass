@@ -1,5 +1,4 @@
 
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Sparkles, ArrowRight, Waves, Leaf, Droplets, ShoppingCart } from "lucide-react";

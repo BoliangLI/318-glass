@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Check, Sparkles, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -359,7 +360,7 @@ export default function Market() {
                 </CardHeader>
                 <CardContent className="space-y-3">
                   {/* 预览区域 */}
-                  <div className="relative h-24 rounded-xl overflow-hidden bg-gradient-to-br ${template.gradient}">
+                  <div className={`relative h-24 rounded-xl overflow-hidden bg-gradient-to-br ${template.gradient}`}>
                     <div
                       className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 p-3"
                       style={{
