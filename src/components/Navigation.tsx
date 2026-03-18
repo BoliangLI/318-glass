@@ -1,11 +1,12 @@
 
 import { NavLink } from "react-router-dom";
-import { Home, Palette } from "lucide-react";
+import { Home, Palette, ShoppingCart } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { path: "/", label: "首页", icon: Home },
   { path: "/designer", label: "设计器", icon: Palette },
+  { path: "/market", label: "市场", icon: ShoppingCart },
 ];
 
 export function Navigation() {

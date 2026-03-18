@@ -1,7 +1,8 @@
 
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Sparkles, ArrowRight, Waves, Leaf, Droplets } from "lucide-react";
+import { Sparkles, ArrowRight, Waves, Leaf, Droplets, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -84,9 +85,10 @@ export default function Home() {
                 size="lg" 
                 variant="outline" 
                 className="glass text-foreground border-foreground/30 hover:bg-white/20 text-lg px-8 rounded-full"
-                onClick={() => navigate("/designer")}
+                onClick={() => navigate("/market")}
               >
-                了解更多
+                <ShoppingCart className="mr-2 w-5 h-5" />
+                浏览样式
               </Button>
             </div>
           </section>
@@ -156,14 +158,25 @@ export default function Home() {
             <p className="text-foreground/70 mb-8 max-w-xl mx-auto">
               立即体验蓝绿色毛玻璃效果带来的视觉革命，打造令人难忘的网页设计
             </p>
-            <Button 
-              size="lg" 
-              className="glass bg-primary/80 hover:bg-primary text-primary-foreground text-lg px-10 rounded-full"
-              onClick={() => navigate("/designer")}
-            >
-              立即创建
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button 
+                size="lg" 
+                className="glass bg-primary/80 hover:bg-primary text-primary-foreground text-lg px-10 rounded-full"
+                onClick={() => navigate("/designer")}
+              >
+                立即创建
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="glass text-foreground border-foreground/30 hover:bg-white/20 text-lg px-10 rounded-full"
+                onClick={() => navigate("/market")}
+              >
+                <ShoppingCart className="mr-2 w-5 h-5" />
+                探索市场
+              </Button>
+            </div>
           </section>
         </main>
 
